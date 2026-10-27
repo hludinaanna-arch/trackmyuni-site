@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackMyUni - School Reviews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #5a5ce6; --primary-hover: #4a4cd6; --text-dark: #111; --text-gray: #6b7280; --bg-light: #f9fafb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        header { background-color: #fff; padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.8rem; font-size: 1.5rem; font-weight: 700; color: var(--text-dark); }
+        .logo svg { height: 40px; width: auto; }
+        .logo .highlight-my { color: #5A5CE6; }
+        nav { display: flex; gap: 2rem; }
+        nav a { font-weight: 500; color: var(--text-dark); transition: color 0.3s ease; }
+        nav a:hover { color: var(--primary-color); }
+        .auth-buttons { display: flex; gap: 1rem; }
+        .btn { padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; display: inline-block; }
+        .btn-login { background-color: transparent; border-color: var(--primary-color); color: var(--primary-color); }
+        .btn-login:hover { background-color: var(--primary-color); color: #fff; }
+        .btn-signup { background-color: var(--primary-color); color: #fff; }
+        .btn-signup:hover { background-color: var(--primary-hover); }
+        .page-header { background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%); padding: 5rem 0; text-align: center; border-bottom-left-radius: 3rem; border-bottom-right-radius: 3rem; margin-bottom: 3rem; }
+        .page-header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .page-header p { font-size: 1.2rem; color: var(--text-gray); max-width: 600px; margin: 0 auto; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; padding-bottom: 6rem; }
+        .review-card { background: #fff; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .stars { color: #fbbf24; margin-bottom: 1rem; font-size: 1.1rem; }
+        .review-text { font-style: italic; color: var(--text-dark); margin-bottom: 1.5rem; line-height: 1.7; }
+        .reviewer { display: flex; align-items: center; gap: 1rem; }
+        .avatar { width: 45px; height: 45px; background: #e0e7ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-weight: 700; }
+        .reviewer-info h4 { font-size: 1rem; margin-bottom: 0.2rem; }
+        .reviewer-info span { font-size: 0.85rem; color: var(--text-gray); }
+        @media (max-width: 768px) { .header-content { flex-direction: column; gap: 1.5rem; } nav { flex-wrap: wrap; justify-content: center; } .page-header h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 20L15 40L50 60L85 40L50 20Z" stroke="#1F2937" stroke-width="5" stroke-linejoin="round"/><path d="M25 50V75C25 75 35 85 50 85C65 85 75 75 75 75V50" stroke="#1F2937" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="85" cy="65" r="8" fill="#5A5CE6"/><path d="M75 55L85 65" stroke="#5A5CE6" stroke-width="3" stroke-linecap="round"/></svg>
+                <span>Track<span class="highlight-my">My</span>Uni</span>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="universities.html">Universities</a>
+                <a href="olympiads.html">Olympiads</a>
+                <a href="volunteering.html">Volunteering</a>
+                <a href="reviews.html" style="color: var(--primary-color);">Reviews</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-login">Log In</a>
+                <a href="#" class="btn btn-signup">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Online School Reviews</h1>
+                <p>Real feedback from students who walked the path before you</p>
+            </div>
+        </section>
+        <section class="container">
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"The AI recommendations were spot on! I found a university that perfectly matched my interest in biotechnology."</p>
+                    <div class="reviewer">
+                        <div class="avatar">AK</div>
+                        <div class="reviewer-info"><h4>Anna K.</h4><span>Class of 2025</span></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                    <p class="review-text">"Great platform for tracking olympiad deadlines. The calendar feature saved me from missing the registration."</p>
+                    <div class="reviewer">
+                        <div class="avatar">DM</div>
+                        <div class="reviewer-info"><h4>Dmitry M.</h4><span>Class of 2026</span></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"I used the volunteering section to find a local mentorship program. It looked amazing on my application!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">EL</div>
+                        <div class="reviewer-info"><h4>Elena L.</h4><span>Class of 2024</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
